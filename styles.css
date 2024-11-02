@@ -1,0 +1,63 @@
+/* styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* 淡い灰色の背景 */
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.photo-container {
+  margin: 40px auto;
+  max-width: 90%;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.8s ease; /* フェードアウトとスライドインのトランジション */
+}
+
+.photo {
+  transition: opacity 0.5s ease; /* フェードアウトに0.5秒 */
+}
+
+.comment {
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* 左からスライドイン */
+.photo-container.slide-in-left {
+  transform: translateX(-100%);
+}
+
+.photo-container.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 右からスライドイン */
+.photo-container.slide-in-right {
+  transform: translateX(100%);
+}
+
+.photo-container.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 8px;
+}
